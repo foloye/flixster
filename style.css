@@ -2,14 +2,55 @@
 .hidden {
     display: none;
 }
-
+form{
+    display: flex;
+    justify-content: center;
+}
 #posters {
-    display: grid;
-    /*grid-template-rows: 80px 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-template-rows: 80px 200px;
     
     justify-content: space-evenly;
     border: 3px solid #fff;
-    padding: 2px;*/
+    padding: 2px;
+    border-color: #540804;
+    border-width: 5px;
+    border-style: double ridge;
+    background-color: #d09d8b;
+}
+
+footer{
+    text-align: center;
+}
+
+h1{
+    display:inline-block;
+    font-family: 'Kalam', cursive;
+    font-size: 60px;
+    
+}
+#credit{
+    display:inline-block;
+
+}
+#logo{
+    vertical-align: middle;
+    width: 2%;
+}
+form > label {
+    padding: .5em 1em .5em 0;
+    flex: 10;
+  }
+
+form > input {
+    flex: 1;
+  }
+
+#reel{
+    vertical-align: middle;
+    width: 8%;
 }
 .movie-card{
     width: 100%;
@@ -20,6 +61,14 @@
 }
 #pls{
     width: 60%;
+    border-style: inset;
+    border-color: #685f74;
+    padding: 45px;
+    background-color: #facfad;
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
 }
 
 .movie-poster {
@@ -30,9 +79,126 @@
 #falloutboy {
     display: grid;
     grid-template-columns: auto auto auto;
+    
+    
 }
 
+
+#header {
+    text-align: center;
+}
+.movie-title{
+    font-family: 'Playfair Display', serif;
+}
+
+.movie-votes{
+    font-family: 'Roboto Mono', monospace;
+}
 body {
-    background-color: white;
+    /*background-color: #FACFAD;*/
+    text-align: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(250,207,173,1) 35%, rgba(119,51,68,1) 100%);
    
 }
+#load-more-movies-btn, #reset,#submitBtn {
+	box-shadow: 0px -1px 0px 1px #1c1b18;
+	background:linear-gradient(to bottom, rgba(250,207,173,1) 5%, #ccc2a6 100%);
+	background-color:rgba(250,207,173,1);
+	border-radius:14px;
+	border:2px solid rgba(119,51,68,1);
+	display:inline-block;
+	cursor:pointer;
+	color:rgba(119,51,68,1);
+	font-family:'Old Standard TT', serif;
+	font-size:18px;
+	font-weight:bold;
+	padding:12px 58px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+#load-more-movies-btn:hover, #reset:hover, #submitBtn:hover {
+	background:linear-gradient(to bottom, #ccc2a6 5%, rgba(250,207,173,1) 100%);
+	background-color:#ccc2a6;
+}
+#load-more-movies-btn:active, #reset:active, #submitBtn:active {
+	position:relative;
+	top:1px;
+}
+
+#searchBar {
+   /* width:1300px;
+    min-width: 100px;
+    
+    height: 23px;*/
+    font-size:14pt;
+    box-shadow: 0px -1px 0px 1px #1c1b18;
+	background:#ffffff;
+	background-color:#ffffff;
+	border-radius:14px;
+	border:2px solid rgba(119,51,68,1);
+	display:inline-block;
+	cursor:pointer;
+	color:rgba(119,51,68,1);
+	font-family: 'Didact Gothic', sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	padding:12px 58px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+#searchTitle {
+    font-family: 'Bayon', sans-serif;
+    font-size:45px;
+    text-align: center;
+}
+
+.load {
+    text-align: center;
+    padding: 30px;
+}
+
+.popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+.popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+
+/*
+#reset {
+    width: 234px;
+    height: 55px;
+
+}
+
+#movies-grid {
+    display: flex;
+}*/

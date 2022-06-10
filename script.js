@@ -1,6 +1,6 @@
 //Global Constants & Variables
 
-const apiKey = "API_KEY";
+const apiKey = "64bfb1a66c698edb3631d259e0294901";
 let pageNum = 1;
 let searchTerm;
 
@@ -19,6 +19,7 @@ let searchEl = document.querySelector("form");
 let searchBarEl = document.querySelector("#searchBar")
 let loadFooter = document.querySelector(".load");
 let searchTitleEl = document.querySelector("#searchTitle");
+var popup = document.getElementById(".popuptext");
 
 
 searchEl.addEventListener("submit", getMoviesSearch);
@@ -39,7 +40,10 @@ async function getMoviesSearch(evt) {
     let formContent = form.elements("searchBar")
     let eventVal = formContent.value
     */
+
+    
     let eventVal = searchBarEl.value
+
     let apiUrl = "https://api.themoviedb.org/3/search/movie?api_key=64bfb1a66c698edb3631d259e0294901&language=en-US&query="+eventVal +"&page=1&include_adult=false"
     console.log(apiUrl)
     searchTerm = eventVal;
@@ -48,7 +52,7 @@ async function getMoviesSearch(evt) {
     console.log(jsonReponse.results)
     displayMovies(jsonReponse);
     loadFooter.classList.remove("hidden")
-    searchTitleEl.innerHTML = searchTerm.toUpperCase() + " MOVIES";
+    searchTitleEl.innerHTML = 'Showing results for "' + searchTerm + '" ';
 
 }
 
@@ -59,6 +63,10 @@ async function getMovies() {
     let response = await fetch(apiUrl);
     let jsonReponse = await response.json();
     displayMovies(jsonReponse);
+}
+function testClick() {
+    console.log("ur so cool");
+    popup.classList.toggle("show");
 }
 
 function displayMovies(movieData) {
@@ -76,9 +84,10 @@ function displayMovies(movieData) {
         let imgPoster = "https://image.tmdb.org/t/p/w500" + movieData.results[i].poster_path
         cardEl.innerHTML += `
             <div class="movie-card" id="pls">
-                <img class="movie-poster" src="${imgPoster}" alt="Movie Poster of ${movieData.results[i].original_title}">
+                <img class="movie-poster" src="${imgPoster}" alt="Movie Poster of ${movieData.results[i].original_title}" onClick ="testClick()">
+                <span class="popuptext" id="myPopup">Testting the popup feature</span>
                 <h3 class="movie-title">${movieData.results[i].original_title}</h3>
-                <h4 class="movie-votes">${movieData.results[i].vote_average}</h4>  
+                <h4 class="movie-votes">⭐ ${movieData.results[i].vote_average}/10</h4>  
             </div>
         `
     }
@@ -105,6 +114,7 @@ function clearSearch(){
     searchTerm;
     loadFooter.classList.add("hidden")
     searchTitleEl.innerHTML = "CURRENTLY SHOWING";
+    document.documentElement.scrollTop = 0;
     getMovies();
 
 }

@@ -5,19 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Flixer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bayon&family=Didact+Gothic&family=Kalam&family=Old+Standard+TT&family=Playfair+Display&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <title>Flixster</title>
 </head>
 <body>
     <div id="header">
-        <h1>Flixer</h1>
-        <div id="search-input">
+        <img id="reel" src="reel.png" alt="cartoon image of movie reel">
+        <h1>Flixster</h1>
+        
+        <br>
+        <div id="search-input" class="flexbox">
             <form id ="searchForm">
                 <div>
-                    <input type="text" id="searchBar" name="searchBar" placeholder="Search For Movies Here">
+                    <input type="text" id="searchBar" name="searchBar" placeholder="Search For Movies Here"><input type="submit" id="submitBtn" value="Enter">
                 </div>
                 
                 <div>
-                    <input type="submit" id="submitBtn">
+                    
                 </div>
                 
 
@@ -27,10 +33,11 @@
 
     <div id="movies-grid">
         <h2 id="searchTitle">CURRENTLY SHOWING</h2>
-            <div id="posters">
+            <div id="posters" class="flexbox">
                 <div class="movie-card" id="falloutboy">
 
                     <img class="movie-poster" src="" alt="">
+                    <span class="popuptext" id="myPopup">Testting the popup feature</span>
                     <h3 class="movie-title"></h3>
                     <h4 class="movie-votes"></h4>   
 
@@ -41,13 +48,18 @@
 
     </div>
 
-    <div class="load hidden">
+    <div class="load hidden" class="flexbox">
         <button id="load-more-movies-btn">Load More</button>
         <button id="reset">Clear Search</button>
     </div>
     
+    <br>
+    <footer>
+        <img id="logo" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="image of The Movie Database logo">
+        <h4 id="credit"> Powered by The Movie Database</h4>
 
-
+    </footer>
+    
 
 
     <script src="script.js"></script>
